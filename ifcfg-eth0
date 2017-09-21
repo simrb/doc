@@ -1,0 +1,20 @@
+# /etc/sysconfig/network-scripts/ifcfg-eth0
+# or /etc/sysconfig/network-scripts/ifconfig-eth0
+
+
+DEVICE="eth0"
+MTU="1500"
+NM_CONTROLLED="yes"
+ONBOOT="yes"
+
+BOOTPROTO="static"
+IPADDR=10.21.166.111
+NETMASK=255.255.254.0
+GATEWAY=10.21.167.1
+HWADDR="00:0C:29:17:A0:FA"
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+
+# if you want to set DHCP, change this option
+# BOOTPROTO=dhcp
+# and type command, `service network restart`
