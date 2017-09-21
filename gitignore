@@ -1,0 +1,11 @@
+# ~/project/.gitignore
+# common gitignore file
+
+*.apk
+*.bak
+/upload
+*/upload/
+*.log
+*.temp
+*.*~
+~*.*
