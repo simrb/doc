@@ -1,5 +1,3 @@
-[path]
-	~/project/.git/config
 [core]
 	repositoryformatversion = 0
 	filemode = true
@@ -12,7 +10,15 @@
 	remote = origin
 	merge = refs/heads/master
 
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+
+
+
 [comment]
-first commit with, `git push -u origin master`
+	first commit with, `git push -u origin master`
+	this file save at ~/project/.git/config
 
 
