@@ -7,20 +7,16 @@ fi
 
 # common
 alias gv="gvim"
-alias gitst="git st -s"
-alias gitam="git commit -am "
+alias gits="git status -s"
+alias gita="git add "
 alias gitm="git commit -m "
 alias gitp="git push"
 alias gitl="git log --pretty=format:'%h, %s' -10"
 
-# cd /var/www
+# cd shortcut
 alias cdh="cd /var/www/html"
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-
-
-
+# grep command
+export GREP_OPTIONS="--exclude-dir=\.git --exclude=tags"
 
 
