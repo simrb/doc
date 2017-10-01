@@ -13,6 +13,7 @@ cmap Q q
 cmap W w
 cmap WQ wq
 cmap Wq wq
+cmap qq q!
 
 imap <f8> ()<esc>i
 imap <f9> []<esc>i
@@ -20,11 +21,11 @@ imap <f10> {}<esc>i
 imap <f11> ''<esc>i
 imap <f12> ""<esc>i
 
-nmap <c-h> ^
-nmap <c-l> $
-nmap <c-k> {
-nmap <c-j> }
-nmap <space> :
+noremap <c-h> ^
+noremap <c-l> $
+noremap <c-k> {
+noremap <c-j> }
+noremap <space> :
 
 
 " 
@@ -47,7 +48,7 @@ let g:NERDTreeWinSize=25
 " tab tool
 "
 cmap tn tabnew
-noremap <C-t> :tabnew
+" noremap <C-t> :tabnew
 noremap <C-Right> :tabnext<CR>
 noremap <C-Left> :tabprevious<CR>
 
