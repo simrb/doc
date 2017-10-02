@@ -19,4 +19,6 @@ alias cdh="cd /var/www/html"
 # grep command
 export GREP_OPTIONS="--exclude-dir=\.git --exclude=tags"
 
+# ctags command
+alias ctagsj="ctags --langmap=php:.inc --languages=php -R"
 
