@@ -20,5 +20,5 @@ alias cdh="cd /var/www/html"
 export GREP_OPTIONS="--exclude-dir=\.git --exclude=tags"
 
 # ctags command
-alias ctagsj="ctags --langmap=php:.inc --languages=php -R"
+alias ctagsj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
 
