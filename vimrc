@@ -2,6 +2,8 @@
 
 " commom
 syntax on
+filetype on
+filetype indent on
 colorscheme desert
 
 set ts=4
@@ -15,11 +17,13 @@ cmap WQ wq
 cmap Wq wq
 cmap qq q!
 
-imap <f8> ()<esc>i
-imap <f9> []<esc>i
-imap <f10> {}<esc>i
-imap <f11> ''<esc>i
-imap <f12> ""<esc>i
+inoremap <f3> ''<esc>i
+inoremap <f4> ""<esc>i
+inoremap <f8> <><esc>i
+inoremap <f9> ()<esc>i
+inoremap <f10> []<esc>i
+inoremap <f11> {}<esc>i
+inoremap jj <esc>
 
 noremap <c-h> ^
 noremap <c-l> $
@@ -48,23 +52,16 @@ let g:NERDTreeWinSize=25
 " tab tool
 "
 cmap tn tabnew
-" noremap <C-t> :tabnew
+"noremap <C-t> :tabnew
 noremap <C-Right> :tabnext<CR>
 noremap <C-Left> :tabprevious<CR>
 
 
 "
-" language abbreviation
-" 
-ab hjj <>
-ab fjj function () {<CR>}<ESC>kwhh
-
-
-"
 " comment/uncomment
 "
-noremap <silent> ccj :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ucj :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 autocmd FileType c,cpp,java,php,js,css 	let b:comment_leader = '// '
 autocmd FileType sh,ruby,python 		let b:comment_leader = '# '
 autocmd FileType vi,vim 				let b:comment_leader = '" '
@@ -80,7 +77,12 @@ vnoremap y "ay
 vnoremap p "ap
 
 
-
+"
+" language strutcure abbreviation
+" 
+ab fnj function () {<CR>}<ESC>kwh
+ab ifj if () {<CR>}<ESC>kwh
+ab ifl if () {<CR>} else {<cr>}<ESC>kkwh
 
 
 
