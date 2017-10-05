@@ -3,8 +3,7 @@
 " commom
 syntax on
 filetype on
-filetype indent on
-colorscheme desert
+colorscheme murphy
 
 set ts=4
 set t_Co=256
@@ -80,9 +79,8 @@ vnoremap p "ap
 "
 " language strutcure abbreviation
 " 
-ab fnj function () {<CR>}<ESC>kwh
+ab funj function () {<CR>}<ESC>kwhh
 ab ifj if () {<CR>}<ESC>kwh
 ab ifl if () {<CR>} else {<cr>}<ESC>kkwh
-
 
 
