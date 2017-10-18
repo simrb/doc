@@ -64,6 +64,7 @@ noremap <silent> cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<C
 autocmd FileType c,cpp,java,php,js,css 	let b:comment_leader = '// '
 autocmd FileType sh,ruby,python 		let b:comment_leader = '# '
 autocmd FileType vi,vim 				let b:comment_leader = '" '
+autocmd FileType sql 					let b:comment_leader = '-- '
 
 
 "
