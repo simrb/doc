@@ -1,32 +1,50 @@
 #!/bin/bash
 
-while getopts "h:u:p:edi" arg
+Uhost="localhost"
+Uname="root"
+Upawd="1234"
+Uinitpj="no"
+Uinitdb="no"
+Uinitht="no"
+
+while getopts "h:u:p:edi" opt
 do
-	case $arg in
+	case $opt in
 		 h)
-			echo "Host is $OPTARG"
-			;;
+		 	Uhost=$OPTARG;;
 		 u)
-			echo "user is $OPTARG"
-			;;
+		 	Uname=$OPTARG;;
 		 p)
-			echo "password is $OPTARG"
-			;;
+		 	Upawd=$OPTARG;;
 		 e)
-			echo "initialing project environment"
-			;;
+		 	Uinitpj="yes";;
 		 d)
-			echo "initialing database for you"
-			;;
+		 	Uinitdb="yes";;
 		 i)
-			echo "increasing the index.html for each dir"
-			;;
+		 	Uinitht="yes";;
 		 ?)
-		echo "unkonw argument"
-	exit 1
-	;;
+			echo "unkonw option"
+			exit 1
+			;;
 	esac
 done
 
+
+if [ $Uinitpj = "yes" ]; then
+	echo "initialing project environment."
+fi
+
+
+if [ $Uinitdb = "yes" ]; then
+	echo "initialing database with -h$Uhost, -u$Uname, -p$Upawd."
+fi
+
+
+if [ $Uinitht = "yes" ]; then
+	echo "initialing index page for each directory."
+fi
+
+
 # run it by
-# bash bt.sh -e -d -h localhost -u root -p 1234
+# sh thisfilename  -e -d -h localhost -u root -p 1234
+
