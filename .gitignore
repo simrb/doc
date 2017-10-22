@@ -1,0 +1,19 @@
+# common ignored file
+*.apk
+*.bak
+*.log
+*.temp
+*.tmp
+*.*~
+~*.*
+*.swp
+*.db
+
+# ctags tool
+tags
+
+# test file
+*.t
+*.tt
+t.tpl
+t.php
