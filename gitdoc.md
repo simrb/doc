@@ -28,6 +28,10 @@ switch brance
 	git checkout newbrance
 	git checkout master
 
+fresh the remote branch
+
+	git remote update origin --prune
+
 
 ### fetch and pull
 
