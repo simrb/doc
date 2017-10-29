@@ -1,31 +1,31 @@
-### brance
+### branch
 
-create brance
+create branch
 
-	git checkout -b newbrance
+	git checkout -b newbranch
 
 push to remote, pull from remote
 
-	git push origin nenbrance
-	git pull origin nenbrance
+	git push origin nenbranch
+	git pull origin nenbranch
 
-delete brance
+delete branch
 
-	git brance -d newbrance
+	git branch -d newbranch
 
-delete remote brance
+delete remote branch
 
-	git push origin :newbrance
+	git push origin :newbranch
 
-see brance
+see branch
 
-	git brance
-	git brance -a
-	git brance -v
+	git branch
+	git branch -a
+	git branch -v
 
-switch brance
+switch branch
 
-	git checkout newbrance
+	git checkout newbranch
 	git checkout master
 
 fresh the remote branch
