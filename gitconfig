@@ -15,5 +15,8 @@
 	st = status
 [comment]
 	path at ~/project/.git/config
+	connecting with ssh, the url must be
+	url = git@github.com:username/project.git
+
 
 
