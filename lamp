@@ -1,5 +1,4 @@
 
-
 how to connect linux of remote ?
 $ ssh -p 2222 user@host.ip
 $ ssh root@hostip
@@ -11,12 +10,14 @@ $ php -v
 
 
 how to install apache, php, mysql ?
-$ yum -y install mysql mysql-server mysql-devel
-$ yum -y install php php-mysql
-$ yum -y install httpd
+# yum -y install mysql mysql-server mysql-devel
+# yum -y install php php-mysql
+# yum -y install httpd
 
-$ service mysqld start
-$ service httpd start
+# chkconfig httpd on
+# chkconfig mysqld on
+# /etc/init.d/httpd start
+# /etc/init.d/mysqld start
 
 
 how to send file/dir form localhost to remote in linux servers ?
