@@ -1,0 +1,14 @@
+
+how to connect remote server ?
+$ ssh -p 2222 user@host.ip
+$ ssh root@hostip
+
+how to send file/dir form localhost to remote in linux servers ?
+$ scp /var/www/logo.png root@ip_or_domain:/var/www/logo.png
+$ scp -r /var/www/cms/ root@ip_or_domain:/var/www/cms/
+$ scp -r /var/www/cms/ ip_or_domain:/var/www/cms/
+
+how to copy/dir file form remote to localhost ?
+$ scp root@ip:/var/www/test.txt /var/www/test.test
+$ scp -r ip:/var/www/cms/ /var/www/cms/
+

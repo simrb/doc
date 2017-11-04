@@ -10,3 +10,9 @@ grep usage
 chmod usage
 
 	chmod -R 777 mydir
+
+
+set system date
+
+	date -s "your current time and format"
+	date -s "2017/10/10 13:31:32"

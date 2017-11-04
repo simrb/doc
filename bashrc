@@ -19,15 +19,16 @@ alias gitp="git push"
 alias gitl="git log --pretty=format:'%h, %s' -10"
 alias gitc="git checkout "
 alias gitb="git branch "
+alias gitv="git branch -av"
 
 # grep
 export GREP_OPTIONS="--exclude-dir=\.git --exclude-dir=jquery --exclude=tags"
 
 # ctags
-alias ctagsj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
+alias tagj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
 
 # source
-alias flba="source ~/.bashrc"
+alias baj="source ~/.bashrc"
 
 # cd
 alias cdh="cd /var/www/html"

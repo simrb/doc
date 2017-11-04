@@ -1,9 +1,5 @@
-Some copy files of centos, such as,
+### About
 
-	~/.vimrc
-	~/.bashrc
-	~/project/.git/config
-	/etc/sysconfig/network-scripts/ifcfg-eth0
-
+	demo scripts and command documents
 
 
