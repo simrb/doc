@@ -1,4 +1,5 @@
 #!/bin/bash
+# a common script for bash command with options
 
 Uhost="localhost"
 Uname="root"
