@@ -20,6 +20,7 @@ alias gitl="git log --pretty=format:'%h, %s' -10"
 alias gitc="git checkout "
 alias gitb="git branch "
 alias gitv="git branch -av"
+alias gitr="git branch -r"
 alias gitf="git remote update origin --prune"
 
 # grep
@@ -30,6 +31,7 @@ alias tagj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
 
 # source
 alias baj="source ~/.bashrc"
+alias fba="source ~/.bashrc"
 
 # cd
 alias cdh="cd /var/www/html"
