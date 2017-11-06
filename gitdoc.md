@@ -50,6 +50,36 @@ fetch and merge at the same time
 
 
 
+Tag
+============
+
+add tag, add by commit-id
+
+	git tag v1.0
+	git tag -a v1.2 -m 'v1.2'
+	git tag -a v1.2 commit-id -m 'v1.2'
+
+delete tag, remote tag
+
+	git tag -d v1.0
+	git push origin :v1.0
+
+list tag
+
+	git tag
+	git tag -l
+
+checkout tag
+
+	git checkout v1.0
+
+push to remote, push all at once time
+
+	git push origin v1.0
+	git push origin --tags
+
+
+
 Status
 ============
 
