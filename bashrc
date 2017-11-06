@@ -20,6 +20,7 @@ alias gitl="git log --pretty=format:'%h, %s' -10"
 alias gitc="git checkout "
 alias gitb="git branch "
 alias gitv="git branch -av"
+alias gitf="git remote update origin --prune"
 
 # grep
 export GREP_OPTIONS="--exclude-dir=\.git --exclude-dir=jquery --exclude=tags"
