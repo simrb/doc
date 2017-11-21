@@ -27,7 +27,8 @@ alias gitf="git remote update origin --prune"
 export GREP_OPTIONS="--exclude-dir=\.git --exclude-dir=jquery --exclude=tags"
 
 # ctags
-alias tagj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
+#alias tagj="ctags --langmap=php:.inc --languages=php --exclude=.git -R"
+alias tagj="ctags --languages=php --exclude=.git -R"
 
 # source
 alias baj="source ~/.bashrc"
