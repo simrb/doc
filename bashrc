@@ -31,8 +31,8 @@ export GREP_OPTIONS="--exclude-dir=\.git --exclude-dir=jquery --exclude=*.swp --
 alias tagj="ctags --languages=php --exclude=.git -R"
 
 # source
+# alias fba="source ~/.bashrc"
 alias baj="source ~/.bashrc"
-alias fba="source ~/.bashrc"
 
 # cd
 alias cdh="cd /var/www/html"
