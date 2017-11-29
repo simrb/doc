@@ -4,7 +4,6 @@ About
 	demo scripts and command documents
 
 
-
 apache
 ============
 
@@ -31,7 +30,6 @@ or add the following
 	  /etc/init.d/mysqld start
 
 
-
 mysql
 ============
 
@@ -55,7 +53,6 @@ or
 	# mysql -uroot < my.sql
 
 
-
 remote
 ============
 
@@ -76,7 +73,6 @@ how to copy/dir file form remote to localhost ?
 	$ scp -r ip:/var/www/cms/ /var/www/cms/
 
 
-
 grep
 ============
 
@@ -87,12 +83,10 @@ grep
 	grep "func myfun(.*)" . -R --color
 
 
-
 chmod
 ============
 
 	chmod -R 777 mydir
-
 
 
 date
@@ -105,6 +99,28 @@ date
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 
+ln
+============
+
+	ln -s /var/www/html /home/username/
+
+
+pkill
+============
+
+kill login user
+
+	pkill -kill -t pts/2
+
+
+chkconfig
+============
+
+start when system booting
+
+
+	chkconfig mysqld on
+	chkconfig httpd on
 
 
 
