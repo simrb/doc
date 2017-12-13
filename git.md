@@ -33,6 +33,16 @@ fresh the remote branch
 
 	git remote update origin --prune
 
+rename branch
+
+	git branch -m new-name
+	git branch -m old-name new-name
+
+rename remote branch
+
+	git push origin -u new-name
+	git push origin :old-name
+
 
 
 Fetch and pull
