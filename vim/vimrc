@@ -9,6 +9,7 @@ set ts=4
 set t_Co=256
 set shiftwidth=4
 set autoindent
+set lines=30 columns=120
 
 cmap Q q
 cmap W w
