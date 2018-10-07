@@ -13,13 +13,44 @@ how to install apache, php, mysql ?
 	# yum -y install php php-mysql
 	# yum -y install httpd
 
+how to let it running when the server start automatically ? 
+
 	# chkconfig httpd on
 	# chkconfig mysqld on
 	# /etc/init.d/httpd start
 	# /etc/init.d/mysqld start
 
-or add the following 
+or
 
 	# vi /etc/rc.d/rc.local
 	  /etc/init.d/httpd start
 	  /etc/init.d/mysqld start
+
+how to set the vhost ?
+
+open your httpd config file like
+
+	# vi /etc/httpd/conf/http.conf
+
+and, uncomment the next line
+
+	NameVirtualHost *:80
+	
+	LoadModule Vhost_alias_modules/mod_vhost_alias.so
+
+and open new file in `/etc/httpd/conf.d/vhost`, then wirte down look like the under code
+
+	<VirtualHost *:80>
+		ServerName	www.mypro.com
+		DocumentRoot /var/www/html/mypro
+		ErrorLog	/var/logs/mypro.error
+		CustomLog	/var/logs/mypro.access common
+	</VirtualHost>
+
+	<VirtualHost *:80>
+		ServerName	www.mypro2.com
+		DocumentRoot /var/www/html/mypro2
+		ErrorLog	/var/logs/mypro2.error
+		CustomLog	/var/logs/mypro2.access common
+	</VirtualHost>
+
