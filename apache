@@ -38,19 +38,27 @@ and, uncomment the next line
 	
 	LoadModule Vhost_alias_modules/mod_vhost_alias.so
 
-and open new file in `/etc/httpd/conf.d/vhost`, then wirte down look like the under code
+and open new file in `/etc/httpd/conf.d/vhost.conf`, then wirte down the under code look like
 
 	<VirtualHost *:80>
-		ServerName	www.mypro.com
-		DocumentRoot /var/www/html/mypro
-		ErrorLog	/var/logs/mypro.error
-		CustomLog	/var/logs/mypro.access common
+		ServerName	www.aa.com:80
+		DocumentRoot /var/www/html
+		ErrorLog	/var/log/aa.error
+		CustomLog	/var/log/aa.access common
 	</VirtualHost>
 
 	<VirtualHost *:80>
-		ServerName	www.mypro2.com
-		DocumentRoot /var/www/html/mypro2
-		ErrorLog	/var/logs/mypro2.error
-		CustomLog	/var/logs/mypro2.access common
+		ServerName	www.bb.com:80
+		DocumentRoot /var/www/html/bb
+		ErrorLog	/var/log/bb.error
+		CustomLog	/var/log/bb.access common
 	</VirtualHost>
-
+	
+	<VirtualHost *:80>
+		ServerName	bb.com:80
+		DocumentRoot /var/www/html/bb
+		ErrorLog	/var/log/bb.error
+		CustomLog	/var/log/bb.access common
+	</VirtualHost>
+	
+then reboot the server.
