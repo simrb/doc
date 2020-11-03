@@ -1,0 +1,17 @@
+@echo off
+
+rem this is a file for restarting the mysql when it has been shutdowned acciddentally.
+rem put this file in task-plan manager and repeat it by minutes.
+
+setlocal enabledelayedexpansion
+for /f "tokens=*" %%a in ('sc query mysql-name') do (
+echo %%a|findstr "STOPPED" >nul 2>nul
+  if !errorlevel! equ 0 (
+	    rem echo service is down, we gotta do something
+	    echo %date% %time% >>c:/restart-log.txt
+	    sc start mysql-name
+  ) else (
+	    rem echo task is running, we are nothing to do
+  )
+)
+rem pause
