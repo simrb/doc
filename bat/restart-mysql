@@ -1,9 +1,8 @@
-@echo off
+@echo off & setlocal enabledelayedexpansion
 
-rem this is a file for restarting the mysql when it has been shutdowned acciddentally.
-rem put this file in task-plan manager and repeat it by minutes.
+:: this is a file for restarting the mysql when it has been shutdowned acciddentally.
+:: put this file in task-plan manager and repeat it by minutes.
 
-setlocal enabledelayedexpansion
 for /f "tokens=*" %%a in ('sc query mysql-name') do (
 echo %%a|findstr "STOPPED" >nul 2>nul
   if !errorlevel! equ 0 (
