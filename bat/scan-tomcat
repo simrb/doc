@@ -1,0 +1,24 @@
+@echo off & setlocal enabledelayedexpansion
+
+:: scan all of available tomcat servers
+
+:: set your path of tomcat dir
+DIR d:\Tomcat-* /B > srv-dir.txt
+
+:: fetch the tomcat paths if the startup.bat file is existed
+for /f %%i in (srv-dir.txt) do (
+
+:: set the path of startup.bat file
+    set myf=d:\%%i\bin\startup.bat
+    
+:: set the path or dir what you want saving to file `srv-list.ini`
+    set myd=d:\%%i\bin
+    
+    if exist !myf! (
+       echo !myd!>> srv-list.ini
+    )
+)
+
+:: del srv-list.txt
+
+pause
