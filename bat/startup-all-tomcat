@@ -1,0 +1,20 @@
+:: how to startup tomcat by batch ?
+
+:: put all of shortcuts of tomcat startup.bat to a directory
+
+:: and create `one-key.bat` file by cmd
+
+    cd c:\shortcuts\path\statrup
+    dir /b > one-key.bat
+
+:: then remove the name `one-key.bat` in file
+
+:: so you can see the file content as follow
+
+9901-tomcat.lnk
+9902-tomcat.lnk
+9903-tomcat.lnk
+9904-tomcat.lnk
+9905-tomcat.lnk
+
+
