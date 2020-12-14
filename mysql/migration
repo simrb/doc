@@ -1,0 +1,39 @@
+# mysql db from win to linux
+
+# 1，export
+# =========================
+mysqldump -u root -p --all-databases > c:\db.sql
+
+
+# 2，import
+# =========================
+# check character
+
+show variables like “%char%";
+
+show variables like 'character%';
+
+status;
+
+
+
+# set character
+set names 'gbk';
+
+
+
+#ro modify in my.cnf 
+
+[mysqld]
+
+character-set-server=utf8
+
+collation_server=utf_general_ci
+init_connect='SET NAMES utf8'
+[client]
+
+default-character-set=utf8
+
+
+# do it now
+mysql > source /root/db.sql
