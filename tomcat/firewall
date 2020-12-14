@@ -1,0 +1,22 @@
+# CentOS 7， RHEL 7， Fedora 
+
+# add
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=1000-2000/tcp --permanent
+
+# check
+firewall-cmd --zone=public --query-port=80/tcp
+firewall-cmd --state //running 
+
+# reload
+firewall-cmd --reload
+
+# startup
+systemctl start firewalld.service*
+
+#shutdown
+systemctl stop firewalld.service
+
+#delete
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+
