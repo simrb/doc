@@ -1,0 +1,5 @@
+# vi /etc/sysconfig/iptables
+
+# copy the line "22 port" as a new line and change "22" to "8080", save and quit
+
+# service iptables restart
