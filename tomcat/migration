@@ -1,0 +1,24 @@
+# migrating the tomcat app from windows to linux
+
+
+
+1， set port in ./conf/server.xml
+
+<Server port="8005" shutdown=""> ...
+<Connector port="8080" protocol="HTTP/1.1"> ...
+<Connector executor="tomcatThreadPool" port="8080"> ...
+
+
+
+2,  set the db config in .webapps/WEB-INF/config..
+
+jdbc.databaseurl=jdbc:mysql://localhost:3306/ccmimp?utoRec.....
+...(3306 is server_id in my.cnf)
+...(ccmimp is db_name)
+
+jdbc.username=login_db_user
+jdbc.password=login_db_password
+
+
+sys.port=tomcat_port
+sys.name=project_name
