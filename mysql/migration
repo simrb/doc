@@ -35,5 +35,5 @@ init_connect='SET NAMES utf8'
 default-character-set=utf8
 
 
-# do it now
-mysql > source /root/db.sql
+# enter mysql db and execute
+@ mysql > source /root/db.sql
