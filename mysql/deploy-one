@@ -1,0 +1,90 @@
+# assuming the dir /mysql is our mysql dir
+
+
+# 1, uncompress and copy files
+# ===============================
+
+tar -zxvf mysql-xxx.tar.gz
+mv mysql-xxx /mysql
+cp /mysql/support-files/my_default.cnf /etc/my.cnf.d/my.cnf
+cp /mysql/support-files/mysql.server /etc/init.d/mysqld
+mkdir /data/mysql
+mkdir /data/mysql/tmp
+mkdir /data/mysql/log
+touch /data/mysql/log/mysql-bin
+
+
+# 2, set group and user
+# ===============================
+
+groupadd mysql
+useradd -g mysql mysql
+chown -R mysql:mysql /mysql
+chown -R mysql:mysql /data/mysql
+
+
+# 3, modify env mysql.sh
+# ================================
+
+# vi /etc/profile.d/mysql.sh
+
+export PATH=$PATH:/mysql/bin
+
+# source /etc/profile
+
+
+
+# 4, modify config my.cnf 
+# ================================
+
+# vi /etc/my.cnf.d/my.cnf
+# ...
+# or /etc/init.d/mysqld
+# basedir =
+# datadir =
+
+
+
+# 5, initialize database
+# =================================
+
+/mysql/scripts/mysql_install_db --user=mysql --basedir=/mysql --datadir=/data/mysql --pid-file=/data/mysql/mysql.pid  --tmpdir=/data/mysql/tmp/
+
+# /etc/init.d/mysqld start
+
+
+
+# startup with system
+# =================================
+
+chkconfig --level 35 mysql on
+chkconfig --list mysql
+ 
+chmod +x /etc/init.d/mysql
+chkconfig --add mysql
+chkconfig --list mysql
+
+# service mysql status
+# SUCCESS! MySQL running (4475)
+
+
+
+# change the root password
+# =================================
+# /mysql/bin/mysqld_safe --skip-grant-tables &
+# mysql -u root
+# update mysql.user set password=password('you password') where user='root';
+# flush privileges;
+
+
+
+# open remote for root
+# =================================
+/mysql/bin/mysqld_safe --skip-grant-tables &
+
+set global read_only=0;
+set golbal read_only=1;
+grant all privileges on *.*  to root@'%' identified by root;
+flush privileges;
+
+
