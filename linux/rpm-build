@@ -1,0 +1,52 @@
+# packet some files and dir to a rpm
+
+# 1，put the mydir.tar to SOURCE dir atfer compressing
+tar -cvf mydir.tar mydir
+
+
+# 2. execute command 
+rpmbuild -ba SPECS/mydir.spec --nodebuginfo
+
+
+# 3, the SPECS/mydir.spec content as follow
+
+Name:		mydir
+Version:	1.2
+Release:	1
+Summary:	mydir
+License:	GPL2
+Source0:	mydir.tar
+BuildRoot:	%{_topdir}/BUILDROOT
+BuildRequires:  /sbin/useradd /sbin/groupadd /bin/bash /bin/sh /bin/chown
+Requires:	cmake	
+%define 	_prefix /home/mydir
+%description
+the %{name} 
+
+%prep
+
+%setup -n %{name}
+
+%install
+mkdir -p %{buildroot}%{_prefix}
+cp -a %{_builddir}/%{name}/* %{buildroot}/%{_prefix}/
+
+%pre
+ 
+%post
+ 
+%preun
+ 
+%postun
+
+%clean
+rm -rf %{_builddir}/*
+rm -rf $RPM_BUILD_ROOT
+ 
+%files
+%defattr(-,root,root)
+/*
+ 
+%changelog
+* Mon Dec 7 2020 myself
+- first packeted for dir
