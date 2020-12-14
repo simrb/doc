@@ -1,0 +1,105 @@
+# mysql-server 5.6
+
+# 1, set dir
+# ===============================
+tar -zxvf mysql-xxx.tar.gz
+cp -r mysql-xxx /3315
+mkdir /3315/tmp
+mkdir /3315/log
+touch /3315/log/mysql-bin
+
+groupadd mysql
+useradd mysql
+chown -R mysql:mysql /3315
+
+
+# 2 , edit config
+# ===============================
+vi /3315/my.cnf
+...
+
+[mysql]
+socket    	= /3315/mysql.sock
+default-character-set=utf-8
+
+[mysqld]
+port    	= 3315
+server_id 	= 3315
+
+basedir  	= /3315
+datadir  	= /3315/data
+log-bin 	= /3315/log/mysql-bin
+tmpdir 		= /3315/tmp
+
+socket    	= /3315/mysql.sock
+log-error    	= /3315/error.log
+pid-file    	= /3315/mysql.pid
+
+user=mysql
+character-set-server=utf8
+lower_case_table_names=1
+autocommit=1
+max_connections=200
+max_allowed_packet=16M
+
+[mysql_safe]
+socket    	= /3315/mysql.sock
+log-error    	= /3315/error.log
+pid-file   	= /3315/mysql.pid
+
+[mysqladmin]
+socket    	= /3315/mysql.sock
+
+[mysqldump]
+socket    	= /3315/mysql.sock
+
+
+
+# 3 , initialing data dir
+# ===============================
+/3315/scripts/mysql_install_db --defaults-file=/3315/my.cnf
+
+
+
+# 4, reset password
+# ===============================
+# startup with safe mode
+/3315/bin/mysqld_safe &
+
+#login
+/3315/bin/mysql --defaults-file=/3315/my.cnf
+
+update mysql.user set password=password('new-pawd') where user='root';
+flush privileges;
+quit;
+
+
+
+# 5, statup, shutdown in normal mode
+# ===============================
+# shutdown
+/3315/bin/mysqladmin --defaults-file=/3315/my.cnf shutdown -uroot -p
+
+# startup
+/3315/bin/mysqld --defaults-file=/3315/my.cnf &
+
+# login
+/3315/bin/mysql --defaults-file=/3315/my.cnf -uroot -p
+
+# export
+/3315/bin/mysqldump --defaults-file=/3315/my.cnf -uroot -p --all-databases > /3315.sql
+
+# import
+/331555/bin/mysql --defaults-file=/331555/my.cnf -uroot -p
+# use db-name
+source /3315.sql
+
+
+
+# So, you can repeat the above steps with replacing the 3315 to create more databases now
+
+
+
+
+
+
