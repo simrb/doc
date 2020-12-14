@@ -1,0 +1,13 @@
+# delete
+yum remove mariadb
+rpm -e --nodeps mariadb
+
+#check
+rpm -qpl mariadb 
+rpm -qa | grep mariadb 
+yum list mariadb*
+
+#install
+rpm -ivh mysql-xxx
+deb -i mysql-xxx
+tar -zxvf xxx.gz
