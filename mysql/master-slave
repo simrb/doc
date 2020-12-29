@@ -1,0 +1,52 @@
+1 modify my.ini
+=====================
+
+master config
+
+	log-bin=mysql-bin
+	server-id=3326
+
+salve config
+
+	log-bin=mysql-bin
+	server-id=3327
+
+then start mysql
+
+
+2 create new user to master and slave
+======================
+CREATE USER 'abc'@'%' IDENTIFIED BY '123';
+GRANT REPLICATION SLAVE ON *.* TO 'abc'@'%'; //only master
+flush privileges;
+
+and make sure the user privileges value is Y 
+of the Repl_slave_priv (and Repl_client_priv)  in mysql.user of master DB
+
+
+3 set slave 
+=====================
+show master status; 
+markdown the  File and Position , such as mysql-bin.000001 , 1146, and set it in slave DB	
+
+change master to master_host='127.0.0.1',
+master_port=3326,
+master_user='abc',
+master_password='123',
+master_log_file='mysql-bin.000001',
+master_log_pos=1146;
+
+flush privileges;
+
+
+4 start and check slave 
+=====================
+start slave;
+show slave status;
+
+	Slave_IO_Running: Yes
+	Slave_SQL_Running: Yes
+
+make sure two option values are YES	
+
+
