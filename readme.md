@@ -1,2 +1,2 @@
-## demo scripts and command documents
+## demo and docs
 
