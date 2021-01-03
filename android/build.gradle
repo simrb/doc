@@ -1,7 +1,7 @@
 // issue
 // about installing the gradle is a trouble problem in china, more people who cannot install it correctly, because the network issue ..
-// so we upset the url to chinese aliyun, but so many guys still have problems there, why ?  
-// because your version is too high to the aliyun repository, you shuld have to downgrade it, such as mine, from 5.4.6 to 3.6.1
+// so we modify the url to chinese aliyun, but so many guys still have problems there, why ?  
+// because your version is too high to the aliyun repository, you shuld have to downgrade it, such as mine, from 5.6.4 to 3.6.1
 // then, recompile again ..
 
 buildscript {
