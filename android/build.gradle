@@ -1,13 +1,15 @@
-// issue 1
-// about installing the gradle is a trouble problem in china, most of people who cannot install it correctly, 
-// because the network issue .. so we modify the url to chinese aliyun, 
+// issue 1 
+// this file is about how to install the gradle coorectly, as we know, it is a trouble in china to most of people who cannot install it, 
+// because the network issue. so we modify the url to chinese aliyun, 
+
 // issue 2 
 // but so many guys still have problems there, why ?  
 // because your version is too high to the aliyun repository, you shuld have to degrade it, such as, from 5.6.4 to 3.6.1
 // then, recompile again ..
-// issue 3
-// Unable to detect adb version, exit value: 0xc0000135. ADB depends on the Windows Universal C Runtime,
-// maybe still have got the error, you need to download the pactch windows KB2999226 for updating windows
+
+// issue 3 
+// unable to detect adb version, exit value: 0xc0000135. ADB depends on the Windows Universal C Runtime,
+// maybe still have got the error, you need to download the pactch windows-KB2999226 for updating windows
 
 // env
 // win 7 (x86), as 3.6.3, sdk r24.4.1, jdk 1.8 (included by as)
