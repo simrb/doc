@@ -4,12 +4,11 @@
 
 // issue 2 
 // but so many guys still have problems there, why ?  
-// because your version is too high to the aliyun repository, you shuld have to degrade it, such as, from 5.6.4 to 3.6.1
-// then, recompile again ..
+// because your gradle-plugin version is not matched with yout gradle, such as the gradle 5.6.4, you have to match it with gradle-plugin 3.6.1
 
 // issue 3 
-// unable to detect adb version, exit value: 0xc0000135. ADB depends on the Windows Universal C Runtime,
-// maybe still have got the error, you need to download the pactch windows-KB2999226 for updating windows
+// Error: unable to detect adb version, exit value: 0xc0000135. ADB depends on the Windows Universal C Runtime,
+// you need to download the pactch windows-KB2999226 for updating windows
 
 // env
 // win 7 (x86), as 3.6.3, sdk r24.4.1, jdk 1.8 (included by as)
@@ -25,7 +24,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.1'
+        // this is gradle plugin version that matches gradle version 5.6.4 ,
+        // you can set it in  of Android Studio > project structure > project 
+        classpath 'com.android.tools.build:gradle:3.6.1'  
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
     }
